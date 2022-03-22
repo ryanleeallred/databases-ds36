@@ -6,15 +6,16 @@ import queries as q
 # from queries import select_all, other_query, another_query
 
 
-def connect_to_db(db_name='rpg_db.sqlite3'):
+def connect_to_db(database='rpg_db.sqlite3'):
     '''DB Connect Function'''
-    return sqlite3.connect(db_name)
+    return sqlite3.connect(database)
 
 
 def execute_q(conn, query):
     '''Make a cursor and execute query function'''
     curs = conn.cursor()
     curs.execute(query)
+    # pull the results
     return curs.fetchall()
 
 
